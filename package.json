@@ -16,6 +16,7 @@
     "vue-axios": "^3.4.0",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0",
+    "vuex-extensions": "^4.0.0",
     "vuex-persistence": "^1.0.2"
   },
   "devDependencies": {
@@ -31,8 +32,9 @@
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "6.0.1",
     "prettier": "^2.2.1",
-    "sass-loader": "^10",
+    "sass-loader": "6.0.1",
     "vue-template-compiler": "^2.6.11"
   }
 }

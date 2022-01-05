@@ -1,5 +1,19 @@
 <template>
-  <div id="app"></div>
+  <div>
+    <CommonHeader></CommonHeader>
+    <transition>
+      <router-view></router-view>
+    </transition>
+  </div>
 </template>
 
-<style></style>
+<script>
+import CommonHeader from '@/components/common/CommonHeader.vue';
+export default {
+  components: {
+    CommonHeader,
+  },
+};
+</script>
+
+<style lang="scss" scoped></style>
