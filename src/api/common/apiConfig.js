@@ -1,9 +1,7 @@
 import Vue from 'vue';
-import wrapper from './axiosInterceptor';
-import VueAxios from 'vue-axios';
 import qs from 'qs';
 
-Vue.use(VueAxios, wrapper);
+//사용안함!
 
 const axios = {
   get(resource, params) {

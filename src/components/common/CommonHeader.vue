@@ -5,7 +5,7 @@
         <img src="@/assets/logo.png" alt="logo" />
       </router-link>
       <router-link to="/men">Men</router-link>
-      <router-link to="/women"></router-link>
+      <router-link to="/women">Women</router-link>
       <router-link to="/electronic">Electronic</router-link>
       <router-link to="/jewelery">Jewelery</router-link>
     </div>
@@ -23,7 +23,6 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-@import 'src/assets/scss/variables';
 nav {
   display: flex;
   justify-content: space-between;

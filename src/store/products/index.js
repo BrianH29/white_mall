@@ -1,7 +1,6 @@
 import actions from './actions';
 import mutations from './mutations';
 import getDefaultState from './state';
-import getters from './getters';
 
 const state = getDefaultState;
 export default {
@@ -9,5 +8,4 @@ export default {
   actions,
   mutations,
   state,
-  getters,
 };

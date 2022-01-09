@@ -1,4 +1,6 @@
 const getDefaultState = () => {
-  return {};
+  return {
+    category: [],
+  };
 };
 export default getDefaultState;

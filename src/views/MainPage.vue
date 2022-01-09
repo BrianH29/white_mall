@@ -5,7 +5,13 @@
 </template>
 
 <script>
-export default {};
+import bus from '@/utils/bus';
+
+export default {
+  mounted() {
+    bus.$emit('off:loading');
+  },
+};
 </script>
 
 <style scoped></style>
