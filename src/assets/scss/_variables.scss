@@ -1,10 +1,13 @@
-$font-color : (
+$basic-color : (
         dark : #222222,
         light: #ffffff,
-        lightDark: #999999
+        lightDark: #999999,
+        inputBg : #D8D8D8,
+        dim-bg: #000000,
 );
 
 $font-size : (
+        xsmall: 14px,
         small : 18px,
         medium: 20px,
         large : 25px,

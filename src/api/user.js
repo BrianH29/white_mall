@@ -1,1 +1,1 @@
-import { user } from './common/instance-index';
+// import { user } from './common/instance-index';
