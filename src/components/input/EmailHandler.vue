@@ -1,34 +1,12 @@
 <template>
   <div class="email__input">
-    <label :for="inputType">{{ inputType }}</label>
-    <input :id="inputType" :type="inputType" :placeholder="placeholder" />
+    <label for="email">EMAIL</label>
+    <input id="email" type="email" placeholder="vue@whitemall.com" />
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      placeholder: '',
-      title: '',
-    };
-  },
-  props: {
-    inputType: {
-      type: String,
-    },
-  },
-  created() {
-    switch (this.inputType) {
-      case 'email':
-        this.placeholder = 'vue@whitemall.com';
-        this.title = 'EMAIL';
-        break;
-      default:
-        break;
-    }
-  },
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>

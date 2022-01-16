@@ -2,7 +2,7 @@
   <div class="register__form">
     <h1>REGISTER</h1>
     <form @submit.prevent="submitRegisterForm">
-      <EmailHandler :inputType="email"></EmailHandler>
+      <EmailHandler></EmailHandler>
       <PhoneNoHandler></PhoneNoHandler>
       <PasswordHandler></PasswordHandler>
       <PasswordHandler></PasswordHandler>
