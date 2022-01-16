@@ -14,6 +14,8 @@
 <script>
 import bus from '@/utils/bus';
 import InputHandler from '@/components/input/InputHandler';
+// import { v4 as uuidv4 } from 'uuid';
+// import { validate as uuidValidate } from 'uuid';
 
 export default {
   components: {
@@ -30,6 +32,12 @@ export default {
   methods: {
     submitRegisterForm() {
       console.log('register button');
+      // const name = 'brian';
+      // const uuid = uuidv4(name);
+
+      // const check = uuidValidate(this.uuid);
+
+      this.$store.dispatch('LOGIN');
     },
   },
   mounted() {
