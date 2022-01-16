@@ -2,10 +2,10 @@
   <div class="register__form">
     <h1>REGISTER</h1>
     <form @submit.prevent="submitRegisterForm">
-      <EmailHandler :inputType="email"></EmailHandler>
-      <PhoneNoHandler></PhoneNoHandler>
-      <PasswordHandler></PasswordHandler>
-      <PasswordHandler></PasswordHandler>
+      <InputHandler :inputType="email"></InputHandler>
+      <InputHandler :inputType="phone"></InputHandler>
+      <InputHandler :inputType="password"></InputHandler>
+      <InputHandler :inputType="password2"></InputHandler>
       <button>REGISTER MEMBER</button>
     </form>
   </div>
@@ -13,19 +13,18 @@
 
 <script>
 import bus from '@/utils/bus';
-import EmailHandler from '@/components/input/EmailHandler';
-import PhoneNoHandler from '@/components/input/PhoneNoHandler';
-import PasswordHandler from '@/components/input/PasswordHandler';
+import InputHandler from '@/components/input/InputHandler';
 
 export default {
   components: {
-    PasswordHandler,
-    PhoneNoHandler,
-    EmailHandler,
+    InputHandler,
   },
   data() {
     return {
       email: 'email',
+      phone: 'phone',
+      password: 'password',
+      password2: 'password2',
     };
   },
   methods: {

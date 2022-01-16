@@ -8,8 +8,8 @@
 
       <div slot="body">
         <form @submit.prevent="submitForm">
-          <EmailHandler></EmailHandler>
-          <PasswordHandler></PasswordHandler>
+          <InputHandler :inputType="email"></InputHandler>
+          <InputHandler :inputType="password"></InputHandler>
           <button class="loginBtn">LOGIN</button>
         </form>
 
@@ -29,14 +29,18 @@
 
 <script>
 import Modal from '@/views/Modal.vue';
-import EmailHandler from '@/components/input/EmailHandler';
-import PasswordHandler from '@/components/input/PasswordHandler';
+import InputHandler from '@/components/input/InputHandler';
 
 export default {
   components: {
-    PasswordHandler,
-    EmailHandler,
     Modal,
+    InputHandler,
+  },
+  data() {
+    return {
+      email: 'email',
+      password: 'password',
+    };
   },
   methods: {
     submitForm() {
