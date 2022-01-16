@@ -47,6 +47,19 @@ const routes = [
     },
   },
   {
+    path: '/register',
+    name: 'register',
+    component: () => import('@/components/user/MemberRegister'),
+    beforeEnter(to, from, next) {
+      try {
+        bus.$emit('on:loading');
+        next();
+      } catch (error) {
+        new Error(`fail to open register ${error}`);
+      }
+    },
+  },
+  {
     path: '/*',
     component: () => import('@/views/PageNotFound.vue'),
   },
@@ -54,6 +67,7 @@ const routes = [
 
 const router = new VueRouter({
   mode: 'history',
+  base: process.env.VUE_APP_PUBLIC_PATH,
   routes,
 });
 

@@ -3,26 +3,25 @@
     <Modal>
       <div slot="header" class="login__header">
         <span>LOGIN</span>
-        <span>REGISTER</span>
+        <span @click="memberRegister">REGISTER</span>
       </div>
 
       <div slot="body">
         <form @submit.prevent="submitForm">
-          <div class="login__id">
-            <label for="id">ID</label>
-            <input id="id" type="text" />
-          </div>
-          <div class="login__pwd">
-            <label for="pwd">PASSWORD</label>
-            <input id="pwd" type="password" />
-          </div>
+          <EmailHandler></EmailHandler>
+          <PasswordHandler></PasswordHandler>
           <button class="loginBtn">LOGIN</button>
         </form>
 
-        <div>
+        <div class="login__identifier">
           <span>FIND ID</span>
           <span>FIND PWD</span>
         </div>
+      </div>
+
+      <div slot="footer">
+        <button>KAKAO</button>
+        <button>NAVER</button>
       </div>
     </Modal>
   </div>
@@ -30,14 +29,21 @@
 
 <script>
 import Modal from '@/views/Modal.vue';
+import EmailHandler from '@/components/input/EmailHandler';
+import PasswordHandler from '@/components/input/PasswordHandler';
 
 export default {
   components: {
+    PasswordHandler,
+    EmailHandler,
     Modal,
   },
   methods: {
     submitForm() {
       console.log('submitForm : success');
+    },
+    memberRegister() {
+      this.$router.push('/register');
     },
   },
 };
@@ -53,32 +59,27 @@ export default {
 
   span:nth-child(2) {
     color: map-get($basic-color, lightDark);
-  }
-}
-
-.login__id,
-.login__pwd {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 1em;
-
-  label {
-    padding-bottom: 0.25em;
-  }
-
-  input {
-    background-color: map-get($basic-color, inputBg);
-    border: none;
-    height: 1.5em;
+    cursor: pointer;
   }
 }
 
 .loginBtn {
-  background-color: map-get($basic-color, dim-bg);
-  color: map-get($basic-color, light);
+  @include common-btn();
   font-size: map-get($font-size, xsmall);
   width: 100%;
-  height: 2em;
-  border: none;
+}
+
+.loginBtn:hover {
+  background-color: map-get($basic-color, lightDark);
+}
+
+.login__identifier {
+  display: flex;
+  padding-top: 2em;
+  font-size: 12px;
+
+  span:nth-child(1) {
+    padding-right: 1em;
+  }
 }
 </style>

@@ -6,8 +6,6 @@ import axios from 'axios';
 
 // const options = {};
 
-const VUE_APP_BASE_URL = 'https://fakestoreapi.com/';
-
 function productPath(url, options = {}) {
   return axios.create(Object.assign({ baseURL: url }, options));
 }
@@ -16,6 +14,6 @@ function productPath(url, options = {}) {
 //   return axios.create(Object.assign({ baseURL: url }, options));
 // }
 
-const product = productPath(`${VUE_APP_BASE_URL}products/`);
-// const user = userPath(`${VUE_APP_BASE_URL}user/`);
+const product = productPath(`${process.env.VUE_APP_BASE_URL}products/`);
+// const user = userPath(`${process.env.VUE_APP_BASE_URL}user/`);
 export { product };

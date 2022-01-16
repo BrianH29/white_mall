@@ -13,3 +13,22 @@ $font-size : (
         large : 25px,
         xlarge : 28px,
 );
+
+@mixin common-btn(){
+  border-radius: 10px;
+  background: map-get($basic-color, dark);
+  color: map-get($basic-color, light);
+  height: 30px;
+  border: none;
+}
+
+@mixin common-display(){
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin form-input(){
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  height: 20px;
+}
