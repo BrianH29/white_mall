@@ -1,4 +1,7 @@
 const getDefaultState = () => {
-  return {};
+  return {
+    userData: {},
+    uuid: '',
+  };
 };
 export default getDefaultState;

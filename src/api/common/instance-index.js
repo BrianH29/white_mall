@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { setRequestInterceptor } from '@/api/common/axiosInterceptor';
 // import {
 //   setResponseInterceptor,
 //   setRequestInterceptor,
@@ -7,7 +8,8 @@ import axios from 'axios';
 // const options = {};
 
 function productPath(url, options = {}) {
-  return axios.create(Object.assign({ baseURL: url }, options));
+  const instance = axios.create(Object.assign({ baseURL: url }, options));
+  return setRequestInterceptor(instance);
 }
 
 // function userPath(url, options = {}) {

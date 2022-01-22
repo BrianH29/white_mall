@@ -3,7 +3,7 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
-import common from '@/plugins/common';
+import common from '@/utils/common';
 
 Vue.prototype.$store = store;
 Vue.prototype.$utils = common;
