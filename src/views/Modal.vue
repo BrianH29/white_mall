@@ -40,7 +40,7 @@ export default {};
   width: 100%;
   height: 100%;
   /*background-color: rgba(0, 0, 0, 0.5);*/
-  background-color: map-get($basic-color, light);
+  background-color: map-get($basic-color, 'white');
   opacity: 0.7;
   display: table;
   transition: opacity 0.3s ease;

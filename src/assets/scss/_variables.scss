@@ -1,25 +1,26 @@
 $basic-color : (
-        dark : #222222,
-        light: #ffffff,
-        lightDark: #999999,
-        inputBg : #D8D8D8,
-        dim-bg: #000000,
+        'dark' : #222222,
+        'white': #ffffff,
+        'lightDark': #999999,
+        'inputBg' : #D8D8D8,
+        'dim-bg': #000000,
 );
 
 $font-size : (
-        xsmall: 14px,
-        small : 18px,
-        medium: 20px,
-        large : 25px,
-        xlarge : 28px,
+        'xsmall': 14px,
+        'small' : 18px,
+        'medium': 20px,
+        'large' : 25px,
+        'xlarge' : 28px,
 );
 
-@mixin common-btn(){
-  border-radius: 10px;
-  background: map-get($basic-color, dark);
-  color: map-get($basic-color, light);
-  height: 30px;
+@mixin common-btn($border, $bgColor, $height, $width,$fontColor){
+  border-radius: $border;
+  background: map-get($basic-color, $bgColor);
+  height: $height;
+  width: $width;
   border: none;
+  color: $fontColor;
 }
 
 @mixin common-display(){

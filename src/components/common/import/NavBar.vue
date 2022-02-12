@@ -28,7 +28,7 @@ export default {
 
 <style lang="scss" scoped>
 .dim {
-  background: map-get($basic-color, light);
+  background: map-get($basic-color, 'white');
   position: absolute;
   width: 100%;
   height: 100%;
@@ -38,7 +38,7 @@ export default {
 
 .nav-wrapper {
   position: fixed;
-  background: map-get($basic-color, light);
+  background: map-get($basic-color, 'white');
   width: 100%;
   height: 5em;
   z-index: 101;

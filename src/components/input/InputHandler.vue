@@ -1,5 +1,5 @@
 <template>
-  <div class="email__input">
+  <div class="input__handler">
     <label :for="inputType">{{ title }}</label>
     <input
       :id="inputType"
@@ -68,11 +68,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.email__input {
+.input__handler {
   @include common-display();
+
+  label {
+    width: 326px;
+    align-self: center;
+  }
 
   input {
     @include form-input();
+    width: 320px;
+    align-self: center;
   }
 }
 </style>

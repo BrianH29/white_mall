@@ -85,12 +85,8 @@ export default {
       }
     },
     focusNext($event, nextRefName) {
-      console.log('listener : ', this.$refs);
-      console.log('listener : ', this.$listeners);
-
-      console.log('focusNext : ', $event);
-      console.log('nextRefName : ', nextRefName);
       const nextNode = this.$refs[nextRefName];
+
       console.log('nextNode : ', nextNode);
       this.$utils.next($event, nextNode);
     },
@@ -114,10 +110,12 @@ form {
 }
 
 button {
-  @include common-btn();
+  @include common-btn(10px, 'dark', 30px, 330px, 'white');
+  width: 330px;
+  align-self: center;
 }
 
 button:hover {
-  background: map-get($basic-color, lightDark);
+  background: map-get($basic-color, 'lightDark');
 }
 </style>

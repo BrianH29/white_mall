@@ -1,40 +1,23 @@
 <template>
-  <div>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-    <h1>MAIN PAGE</h1>
-  </div>
+  <section class="common-padding">
+    <NewArrival></NewArrival>
+  </section>
 </template>
 
 <script>
 import bus from '@/utils/bus';
+import NewArrival from '@/components/main/NewArrival';
 
 export default {
+  components: { NewArrival },
   mounted() {
     bus.$emit('off:loading');
   },
 };
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.common-padding {
+  height: 100vh;
+}
+</style>

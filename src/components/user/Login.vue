@@ -59,22 +59,22 @@ export default {
   justify-content: space-between;
   font-size: map-get($font-size, xsmall);
   padding-bottom: 0.25em;
-  border-bottom: 1px solid map-get($basic-color, lightDark);
+  border-bottom: 1px solid map-get($basic-color, 'lightDark');
 
   span:nth-child(2) {
-    color: map-get($basic-color, lightDark);
+    color: map-get($basic-color, 'lightDark');
     cursor: pointer;
   }
 }
 
 .loginBtn {
-  @include common-btn();
+  @include common-btn(10px, 'dark', 30px, '', 'white');
   font-size: map-get($font-size, xsmall);
   width: 100%;
 }
 
 .loginBtn:hover {
-  background-color: map-get($basic-color, lightDark);
+  background-color: map-get($basic-color, 'lightDark');
 }
 
 .login__identifier {
