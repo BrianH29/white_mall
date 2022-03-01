@@ -5,15 +5,13 @@
         <font-awesome-icon
           icon="fa-solid fa-bars"
           class="hamburg_icon"
-          @click="showMenu"
+          @click="clickEvent"
         />
         <router-link to="/main">
           <img src="@/assets/logo.png" alt="logo" />
         </router-link>
       </div>
 
-      <!--      @mouseover="mouseOver" @mouseleave="mouseLeave"-->
-      <!--      <font-awesome-icon icon="fa-solid fa-chevron-right" />-->
       <div class="navBar__center">
         <ul>
           <li>
@@ -26,36 +24,12 @@
             <router-link to="/jewelery">Jewelery</router-link>
           </li>
           <li>
-            <router-link to="/electronic">Electronic</router-link>
+            <router-link to="/electronics">Electronic</router-link>
           </li>
         </ul>
       </div>
 
-      <div class="navBar__service">
-        <ul>
-          <li>
-            <font-awesome-icon icon="fa-solid fa-store" /> Find Store
-            <router-link to="#"> </router-link>
-          </li>
-          <li>
-            <router-link to="#">
-              <font-awesome-icon icon="fa-solid fa-circle-info" />
-              Customer Service
-            </router-link>
-          </li>
-          <li>
-            <router-link to="#">
-              <font-awesome-icon icon="fa-solid fa-user" /> Login
-            </router-link>
-          </li>
-          <li>
-            <font-awesome-icon icon="fa-solid fa-location-dot" />
-            Republic of Korea
-          </li>
-        </ul>
-      </div>
-
-      <div class="navBar__right">
+      <div class="navBar__right d-flex">
         <router-link to="/login">로그인</router-link>
         <router-link to="/cart">
           <font-awesome-icon icon="fa-solid fa-basket-shopping" />
@@ -64,18 +38,25 @@
     </nav>
 
     <NavBar :navShow="navStatus"></NavBar>
+    <MobileNavBar
+      :mobileNav="mobileNav"
+      @clickEvent="clickEvent"
+    ></MobileNavBar>
   </div>
 </template>
 
 <script>
 import NavBar from '@/components/common/import/NavBar.vue';
+import MobileNavBar from '@/components/common/import/MobileNavBar';
 export default {
   components: {
+    MobileNavBar,
     NavBar,
   },
   data() {
     return {
       navStatus: false,
+      mobileNav: false,
     };
   },
   methods: {
@@ -85,9 +66,17 @@ export default {
     mouseLeave() {
       this.navStatus = false;
     },
-    showMenu() {
-      document.querySelector('.navBar__center').style.display = 'flex';
-      document.querySelector('.navBar__service').style.display = 'flex';
+    clickEvent(sort) {
+      switch (sort) {
+        case 'closeNav':
+          this.mobileNav = false;
+          break;
+        default:
+          // document.querySelector('.navBar__center').style.display = 'flex';
+          // document.querySelector('.navBar__service').style.display = 'flex';
+          this.mobileNav = true;
+          break;
+      }
     },
   },
 };
@@ -107,6 +96,7 @@ export default {
 
   #{&}__left {
     display: flex;
+    flex: 1 1 5%;
     align-items: center;
 
     .hamburg_icon {
@@ -124,9 +114,16 @@ export default {
   }
 
   #{&}__center {
+    flex: 1 1 80%;
+
     ul {
       display: flex;
     }
+  }
+
+  #{&}__right {
+    flex: 1 1 15%;
+    justify-content: flex-end;
   }
 }
 
@@ -157,42 +154,6 @@ a:hover {
 
     #{&}__center {
       display: none;
-      background: white;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 85vw;
-      height: 70vh;
-      animation: show-slide 2s ease-out;
-
-      ul {
-        flex-direction: column;
-        margin-top: 50px;
-        margin-left: 15px;
-        li {
-          margin-bottom: 10px;
-        }
-      }
-    }
-
-    #{&}__service {
-      display: none;
-      background: white;
-      flex-direction: row;
-      position: absolute;
-      left: 0;
-      top: 70vh;
-      width: 85vw;
-      animation: show-slide 2s ease-out;
-
-      ul {
-        flex-direction: column;
-        margin-top: 50px;
-        margin-left: 15px;
-        li {
-          margin-bottom: 10px;
-        }
-      }
     }
 
     #{&}__right {
@@ -200,17 +161,6 @@ a:hover {
       flex: 1 1 45%;
       justify-content: flex-end;
     }
-  }
-}
-
-@keyframes show-slide {
-  from {
-    left: -400px;
-    opacity: 0;
-  }
-  to {
-    right: 200px;
-    opacity: 1;
   }
 }
 </style>

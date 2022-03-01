@@ -9,3 +9,7 @@ export async function fetchPrd() {
 export async function fetchCategory() {
   return await product.get('categories');
 }
+
+export async function fetchCategoryPrd(payload) {
+  return await product.get(`category/${payload}`);
+}

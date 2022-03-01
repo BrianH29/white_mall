@@ -1,0 +1,52 @@
+@use 'variables' as variables;
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.slideY-enter-active {
+  transition: all 0.3s ease;
+}
+
+.slideY-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slideY-enter,
+.slideY-leave-to {
+  transform: translateY(100%);
+}
+
+.common-padding {
+  padding: 30px 15px 15px 15px
+}
+
+.d-flex {
+  display: flex;
+}
+
+.c-space-between{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+a {
+  margin-right: 10px;
+  text-decoration: black;
+  color: map-get(variables.$basic-color, 'dark');
+}
+
+@keyframes show-slide {
+  from {
+    left: -400px;
+    opacity: 0;
+  }
+  to {
+    right: 200px;
+    opacity: 1;
+  }
+}

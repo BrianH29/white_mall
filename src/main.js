@@ -13,6 +13,7 @@ import {
   faUser,
   faLocationDot,
   faChevronRight,
+  faX,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
@@ -24,6 +25,7 @@ library.add(
   faUser,
   faLocationDot,
   faChevronRight,
+  faX,
 );
 
 Vue.prototype.$store = store;
